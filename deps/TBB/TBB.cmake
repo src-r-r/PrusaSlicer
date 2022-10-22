@@ -12,6 +12,7 @@ prusaslicer_add_cmake_project(
         -DTBB_TEST=OFF
         -DCMAKE_POSITION_INDEPENDENT_CODE=ON
         -DCMAKE_DEBUG_POSTFIX=_debug
+        -DTbb_VERSION=9.1.0
 )
 
 if (MSVC)
