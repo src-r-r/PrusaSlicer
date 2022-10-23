@@ -28,7 +28,7 @@ if(NOT NLopt_DIR)
 
 	set(NLopt_FOUND TRUE)
 
-	set(_NLopt_LIB_NAMES "nlopt")
+	set(_NLopt_LIB_NAMES "nlopt" "nloptd")
 	find_library(NLopt_LIBS
 		NAMES ${_NLopt_LIB_NAMES})
 	if(NOT NLopt_LIBS)
@@ -72,7 +72,7 @@ else()
 		set(NLopt_ERROR_REASON "${NLopt_ERROR_REASON} Directory '${NLopt_LIBRARY_DIR}' does not exist.")
 	endif()
 
-	set(_NLopt_LIB_NAMES "nlopt_cxx" "nlopt" "nloptd")
+	set(_NLopt_LIB_NAMES "nlopt_cxx" "nloptd_cxxd")
 	find_library(NLopt_LIBS
 		NAMES ${_NLopt_LIB_NAMES}
 		PATHS ${NLopt_LIBRARY_DIR}
