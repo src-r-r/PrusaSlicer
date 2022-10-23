@@ -72,7 +72,7 @@ else()
 		set(NLopt_ERROR_REASON "${NLopt_ERROR_REASON} Directory '${NLopt_LIBRARY_DIR}' does not exist.")
 	endif()
 
-	set(_NLopt_LIB_NAMES "nlopt_cxx")
+	set(_NLopt_LIB_NAMES "nlopt_cxx" "nlopt" "nloptd")
 	find_library(NLopt_LIBS
 		NAMES ${_NLopt_LIB_NAMES}
 		PATHS ${NLopt_LIBRARY_DIR}
