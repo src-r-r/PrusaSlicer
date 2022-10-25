@@ -1,7 +1,7 @@
 prusaslicer_add_cmake_project(
     TBB
-    URL "https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.5.0.zip"
-    URL_HASH SHA256=83ea786c964a384dd72534f9854b419716f412f9d43c0be88d41874763e7bb47
+    URL "https://github.com/p12tic/oneTBB/archive/19a4f83490d368e5ad5c1dd306812ad973013bcc.zip"
+    URL_HASH SHA256=8478a9a00e3d8347f0095d5d0daabd005acd44296007e529906bc4a1a2b1ba8a
     CMAKE_ARGS          
         -DTBB_BUILD_SHARED=OFF
         -DTBB_TEST=OFF

@@ -1,3 +1,20 @@
+# Utility method to dump CMake variables.
+function(dump_cmake_variables)
+    get_cmake_property(_variableNames VARIABLES)
+    list (SORT _variableNames)
+    foreach (_variableName ${_variableNames})
+        if (ARGV0)
+            unset(MATCHED)
+            string(REGEX MATCH ${ARGV0} MATCHED ${_variableName})
+            if (NOT MATCHED)
+                continue()
+            endif()
+        endif()
+        message(STATUS "${_variableName}=${${_variableName}}")
+    endforeach()
+endfunction()
+
+
 cmake_minimum_required(VERSION 3.13)
 project(PrusaSlicer)
 
@@ -552,7 +569,13 @@ if(SLIC3R_STATIC)
     set(USE_BLOSC TRUE)
 endif ()
 
+
+# TODO: I think we have to hardcode it?
+set(OpenVDB_openvdb_LIBRARY ${CMAKE_PREFIX_PATH}/lib/libopenvdbd.a)
+set(OpenVDB_ROOT ${CMAKE_PREFIX_PATH})
 find_package(OpenVDB 5.0 COMPONENTS openvdb)
+dump_cmake_variables(openVDB.*)
+
 if(OpenVDB_FOUND)
     slic3r_remap_configs(IlmBase::Half RelWithDebInfo Release)
     slic3r_remap_configs(Blosc::blosc RelWithDebInfo Release)

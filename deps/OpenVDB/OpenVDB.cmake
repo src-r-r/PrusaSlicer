@@ -14,8 +14,10 @@ if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
 endif ()
 
 prusaslicer_add_cmake_project(OpenVDB
-    URL https://github.com/AcademySoftwareFoundation/openvdb/archive/2e1904ac81dec803d623ed66b91205dd5678319d.zip
-    URL_HASH SHA256=77ddeee5172c6ec90d6ae20845d8cdfda00fbe05bd37a8ffde58d17a750e236f
+    # URL https://github.com/AcademySoftwareFoundation/openvdb/archive/2e1904ac81dec803d623ed66b91205dd5678319d.zip
+    # URL_HASH SHA256=77ddeee5172c6ec90d6ae20845d8cdfda00fbe05bd37a8ffde58d17a750e236f
+    URL https://github.com/src-r-r/openvdb/archive/66e4a3339ae9729b5396b32e1052e8b1f1ac9d12.zip
+    URL_HASH SHA256=a75ba7d938cb69c4438a1829fe6422e5d9a3c49859c78daacce0dcc59cf29283
     DEPENDS dep_TBB dep_Blosc dep_OpenEXR dep_Boost
     CMAKE_ARGS
         -DCMAKE_POSITION_INDEPENDENT_CODE=ON 
